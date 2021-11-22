@@ -4,10 +4,7 @@ const ytdl = require('ytdl-core');
 const app = express();
 var cors = require('cors')
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 4000;
-}
+
 
 app.use(cors())
 
@@ -54,7 +51,7 @@ app.get("/audio",async(req,res)=>{
     res.json(audioFormats)
 })
 
-
+//app.listen(4000,console.log("working..."))
 
 //download video download
 app.get("/download",async(req,res)=>{
@@ -73,5 +70,4 @@ app.get("/download",async(req,res)=>{
 
     
 })
-//app.listen(4000,console.log("working..."))
-app.listen(port,console.log("working..."))
+app.listen(4000,console.log("working..."))
